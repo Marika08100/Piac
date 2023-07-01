@@ -1,5 +1,7 @@
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 public class Main {
     public static void main(String[] args) {
@@ -57,6 +59,23 @@ public class Main {
         System.out.println("Legdrágább termék: " + mostExpensive.name() + " - Ár:" + mostExpensive.price() + "Ft");
         System.out.println("Legolcsóbb termék: " + cheapest.name() + " - Ár:" + cheapest.price() + "Ft ");
 
+        Map<String,Integer> countPlaces = new HashMap<>();
+        for(var actual : items){
+            List<String> placesOfPurchase = actual.placesOfPurchase();
+            for(String place : placesOfPurchase){
+                countPlaces.put(place,countPlaces.getOrDefault(place,0) +1);
+            }
+        }
+        int maxItem = 0;
+        String mostPlace = "";
+        for(Map.Entry<String,Integer> entry : countPlaces.entrySet()){
+            if(entry.getValue() > maxItem){
+                maxItem = entry.getValue();
+                mostPlace = entry.getKey();;
+            }
+        }
+        System.out.println("Legtöbb helyen kapható termék száma: " + maxItem);
+        System.out.println("Az elérhető legtöbb hely: " + mostPlace);
 
 
     }

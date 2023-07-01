@@ -1,6 +1,6 @@
-tojás;1;100;TRUE;sós;Nagyi farmja,Papi boltja,tavasz,nyár,ősz,tél
-cukor;1 kg;250;TRUE;édes;kurvára nem kapható sehol,tavasz,nyár,ősz,tél
-vaj;100 g;1000;FALSE;sós;CBA,TESCO,Príma,Madaras Teszkó,tavasz,nyár
-Milka csoki;1 tábla;666;FALSE;édes;csokibánya,tél,ősz
+tojás;1;100;TRUE;sós;Nagyi farmja,Papi boltja,tavasz,nyár;ősz,tél
+cukor;1 kg;250;TRUE;édes;kurvára nem kapható sehol,tavasz;nyár,ősz,tél
+vaj;100 g;1000;FALSE;sós;CBA,TESCO,Príma,Madaras Teszkó;tavasz,nyár
+Milka csoki;1 tábla;666;FALSE;édes;csokibánya;tél,ősz
 rizs;1kg;800;FALSE;sós;Japán,Kína,TESCO
-pityóka;1kg;400;TRUE;sós;Pityuka pityókás pultja,ősz,tél
+pityóka;1kg;400;TRUE;sós;Pityuka pityókás pultja;ősz,tél
