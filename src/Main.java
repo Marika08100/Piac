@@ -13,11 +13,51 @@ public class Main {
                     Double.parseDouble(parts[2]),
                     Boolean.parseBoolean(parts[3]),
                     parts[4].equals("sós") ? Category.SALTY : Category.SWEET,
-                    parts.length > 5 ? List.of(parts[5].split(",")) : new ArrayList<>()));
-
+                    parts.length > 5 ? List.of(parts[5]) : new ArrayList<>(),
+                    parts.length > 6 ? List.of(parts[6]) : new ArrayList<>()
+            ));
         }
         for (var actual : items) {
             System.out.println(actual);
         }
+
+        int officialPrice = 0;
+        for (var actual : items) {
+            if (actual.isOfficialPrice()) {
+                officialPrice++;
+            }
+        }
+        System.out.println("Number of official price products: " + officialPrice);
+
+        int saltyPcs = 0;
+        int sweetPcs = 0;
+        for (var actual : items) {
+            if (actual.category().equals(Category.SALTY)) {
+                saltyPcs++;
+            }
+            if (actual.category().equals(Category.SWEET)) {
+                sweetPcs++;
+            }
+
+        }
+        System.out.println("Proportion of salty products: " + (double) saltyPcs / items.size());
+        System.out.println("Proportion of sweet products: " + (double) sweetPcs / items.size());
+
+
+        Items mostExpensive = items.get(0);
+        Items cheapest = items.get(0);
+        for (var actual : items) {
+            if (actual.price() > mostExpensive.price()) {
+                mostExpensive = actual;
+            }
+            if (actual.price() < cheapest.price()) {
+                cheapest = actual;
+            }
+        }
+        System.out.println("Legdrágább termék: " + mostExpensive.name() + " - Ár:" + mostExpensive.price() + "Ft");
+        System.out.println("Legolcsóbb termék: " + cheapest.name() + " - Ár:" + cheapest.price() + "Ft ");
+
+
+
     }
 }
